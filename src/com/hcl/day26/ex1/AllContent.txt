@@ -1,0 +1,4 @@
+Hyundai-Sandro 10000
+Maruti-Alto 5000
+Honda-City 15000
+Mercedes-Benz 150000
