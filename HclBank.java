@@ -40,7 +40,8 @@ public class HclBank {
 	}
 
 	/**
-	 * @param name the name to set.
+	 * @param name
+	 *            the name to set.
 	 * @return void.
 	 * 
 	 */
@@ -59,7 +60,8 @@ public class HclBank {
 	}
 
 	/**
-	 * @param accountNumber - the accountNumber to set.
+	 * @param accountNumber
+	 *            - the accountNumber to set.
 	 * 
 	 * @return void.
 	 */
@@ -78,7 +80,8 @@ public class HclBank {
 	}
 
 	/**
-	 * @param balance - the balance to set.
+	 * @param balance
+	 *            - the balance to set.
 	 * 
 	 * @return void.
 	 */
@@ -86,4 +89,36 @@ public class HclBank {
 		this.balance = balance;
 	}
 
+	public static class Account {
+		double balance;
+
+		public Account(double balance) {
+			super();
+			this.balance = balance;
+		}
+
+		public synchronized void withdraw(double amount) {
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+				System.out.println("Exception occured :" + e);
+			}
+			balance = balance - amount;
+			System.out.println(
+					"Balance Remaining in the Account : " + balance + " " + " " + Thread.currentThread().getName());
+		}
+
+		public synchronized void deposit(double amount) {
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+				System.out.println("Exception occured :" + e);
+			}
+			balance = balance + amount;
+			System.out.println(
+					"Balance Remaining in the Account : " + balance + " " + " " + Thread.currentThread().getName());
+		}
+
+	}
 }
+
