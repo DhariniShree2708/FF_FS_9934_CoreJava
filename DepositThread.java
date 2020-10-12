@@ -1,9 +1,11 @@
 package com.hcl.day28.ex;
 
+import java.util.ArrayList;
+
 /**
  * This class implements the thread concepts by including an interface. this
  * consists of a method which starts execting after the start of thread
- * operations.This is used for crediting of cash.
+ * operations.This is used for depositing some amount in our account.
  *
  * @author Dharini.
  * 
@@ -12,20 +14,24 @@ package com.hcl.day28.ex;
 
 public class DepositThread implements Runnable {
 	private Account obj;
-	private double amount;
+	private double depositAmt;
+	private int accountNumber;
 
 	/*
 	 * This is a parameterized constructor which is created for the class. This
 	 * consists of fields like object which is created for the synchronized class
-	 * and the money to to given.
+	 * and the money to be give for deposition and arraylist.
 	 * 
 	 * @param amt,amount.
 	 */
+	ArrayList<MiniBank> bankLite;
 
-	public DepositThread(Account amt, double amount) {
+	public DepositThread(Account obj, double depositAmt, int accountNumber, ArrayList<MiniBank> bankList) {
 		super();
-		this.obj = amt;
-		this.amount = amount;
+		this.obj = obj;
+		this.depositAmt = depositAmt;
+		this.accountNumber = accountNumber;
+		bankLite = bankList;
 	}
 
 	/*
@@ -37,7 +43,7 @@ public class DepositThread implements Runnable {
 
 	@Override
 	public void run() {
-		obj.deposit(this.amount);
+		obj.deposit(accountNumber, depositAmt, bankLite);
 	}
 
 }

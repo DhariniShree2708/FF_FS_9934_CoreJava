@@ -1,5 +1,7 @@
 package com.hcl.day28.ex;
 
+import java.io.Serializable;
+
 /**
  * 
  * 
@@ -11,7 +13,7 @@ package com.hcl.day28.ex;
  *
  */
 
-public class MiniBank {
+public class MiniBank implements Serializable {
 	private int accountNumber;
 	private String name;
 	private double balance;
@@ -23,12 +25,15 @@ public class MiniBank {
 	 * @param accountNumber
 	 * @param name
 	 * @param balance
+	 * @param withdrawAmt
+	 * @param depositAmt
 	 */
 	public MiniBank(int accountNumber, String name, double balance) {
 		super();
 		this.name = name;
 		this.accountNumber = accountNumber;
 		this.balance = balance;
+
 	}
 
 	/**
@@ -86,5 +91,10 @@ public class MiniBank {
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-
+	/**
+	 * This method is used to return the withdrawal amount which is in the account
+	 * of the account holder in hcl bank.
+	 * 
+	 * @return the withdrawAmt
+	 */
 }

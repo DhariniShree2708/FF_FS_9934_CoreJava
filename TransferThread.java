@@ -5,32 +5,36 @@ import java.util.ArrayList;
 /**
  * This class implements the thread concepts by including an interface. this
  * consists of a method which starts execting after the start of thread
- * operations.This is used for withdrawing of cash from the account.
+ * operations.This is used for transferring of cash from one account to another
+ * account.
  *
  * @author Dharini.
  * 
  * 
  */
 
-public class WithdrawThread implements Runnable {
+public class TransferThread implements Runnable {
 	private Account obj;
-	private double withdrawAmt;
-	private int accountNumber;
+	private int fromAccount;
+	private double amount;
+	private int toAccount;
 
 	/*
 	 * This is a parameterized constructor which is created for the class. This
 	 * consists of fields like object which is created for the synchronized class
-	 * and the money to to given.
+	 * and the account number of sender and receiver and the arraylist.
 	 * 
 	 * @param amt,amount.
 	 */
 	ArrayList<MiniBank> miniBank;
-	public WithdrawThread(Account obj, double withdrawAmt,int accountNumber,ArrayList<MiniBank> bankList) {
+
+	public TransferThread(Account obj, int fromAccount, double amount, int toAccount, ArrayList<MiniBank> bankList) {
 		super();
 		this.obj = obj;
-		this.withdrawAmt= withdrawAmt;
-		this.accountNumber = accountNumber ;
-        miniBank = bankList;
+		this.fromAccount = fromAccount;
+		this.amount = amount;
+		this.toAccount = toAccount;
+		miniBank = bankList;
 	}
 
 	/*
@@ -42,7 +46,7 @@ public class WithdrawThread implements Runnable {
 
 	@Override
 	public void run() {
-		obj.withdraw(accountNumber,withdrawAmt, miniBank);
+		obj.fundTransfer(fromAccount, amount, toAccount, miniBank);
 	}
 
 }
