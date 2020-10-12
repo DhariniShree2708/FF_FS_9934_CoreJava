@@ -14,14 +14,16 @@ import java.util.ArrayList;
  */
 
 public class Account {
-	
+	private int accountNumber;
 	/*
 	 * This method is used to get the amount to be
 	 * withdrawed which gets collected from main method by
 	 * synchrnizing it and then it calculates the total
 	 * balance.
 	 * 
-	 * @param amount.
+	 * @param withdrawAmt
+	 * @param accountNumber
+	 * @param bankList.
 	 * 
 	 * @return void.
 	 */
@@ -47,7 +49,9 @@ public class Account {
 	 * This method is used to get the amount to be deposited which gets collected
 	 * from main method by synchrnizing it and then it calculates the total balance.
 	 * 
-	 * @param amount.
+	 * @param depositAmt
+	 * @param accountNumber
+	 * @param bankList.
 	 * 
 	 * @return void.
 	 */
@@ -73,7 +77,10 @@ public class Account {
 	 * gets collected from main method by synchrnizing it and then it calculates the
 	 * total balance.
 	 * 
-	 * @param amount.
+	 * @param fromAccount
+	 * @param amount
+	 * @param toaccount
+	 * @param bankList.
 	 * 
 	 * @return void.
 	 */
@@ -83,7 +90,7 @@ public class Account {
 		for (MiniBank bank : bankLite) {
 			if (bank.getAccountNumber() == fromAccount) {
 				bank.setBalance(bank.getBalance() - amount);
-				System.out.println("Balance Remaining in the Account : " + formatter.format(bank.getBalance()) + " "
+				System.out.println("Balance Remaining in from Account : " + formatter.format(bank.getBalance()) + " "
 						+ " " + Thread.currentThread().getName());
 			}
 			if (bank.getAccountNumber() == toAccount) {
