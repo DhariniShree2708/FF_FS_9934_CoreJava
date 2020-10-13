@@ -1,11 +1,12 @@
-package com.hcl.day28.ex;
+package com.hcl.day28.bankportal;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -45,23 +46,12 @@ public class MiniBankMain {
 
 		MiniBankMain bank = new MiniBankMain();
 		Scanner sc = new Scanner(System.in);
-
-		// Deserialize of data.The data's are read from the file.
-
-		try {
-			FileInputStream fos = new FileInputStream("D:\\hclbank.txt");
-			ObjectInputStream oos = new ObjectInputStream(fos);
-			bank.bankList = (ArrayList) oos.readObject();
-			oos.close();
-			fos.close();
-		} catch (Exception e) {
-			System.out.println("Error in reading the file." + e.getMessage());
-		}
-
+        bank.deSerialize();
+     try {
 		System.out.println("Welcome to Mini Bank Portal!");
 		String str = "quit";
 		do {
-			System.out.println("Enter command(add/balance/Withdraw/Deposit/Fund Transfer/quit) : ");
+			System.out.println("Enter command(add/balance/Withdraw/Deposit/Fund Transfer/quit/Close) : ");
 			str = sc.next();
 			switch (str.toLowerCase()) {
 			case "add":
@@ -79,6 +69,9 @@ public class MiniBankMain {
 			case "fundtransfer":
 				bank.fundTransfer(sc);
 				break;
+			case "close":
+				bank.closeAccount(sc);
+				break;
 			case "quit":
 				System.out.println("Good Bye!");
 				break;
@@ -87,14 +80,60 @@ public class MiniBankMain {
 				break;
 			}
 		} while (!str.equals("quit"));
-
+		bank.serialize();
 		sc.close();
+     }catch(Exception e) {
+    	 System.out.println("Exception Occured"+e.getMessage());
+     }
+		
+	}
+	
+	/**
+	 * This method is used for closing the bank account.
+	 * 
+	 * @param sc.
+	 * @return void.
+	 */
+	
+	public void closeAccount(Scanner sc) {
+		int accountNum = sc.nextInt();
+		if(checkAccount(accountNum)) {
+			MiniBank mbank = (MiniBank) bankList.parallelStream().
+					filter((bank->bank.getAccountNumber()==(accountNum)).findAny().orElse()
+							.new MiniBank().closeAccount(mbank));
+		}
+	}
 
-		// Serialize of data.The data's are written into the file.
+	/*
+	 * This is used to check whether the account number
+	 * get from the user is valid or not.
+	 * 
+	 * @return boolean.
+	 */
+	
+	
+	public boolean checkAccount(int accountNumber) {
+		
+		
+		for(MiniBank bank:bankList) {
+			if(bank.getAccountNumber()==accountNumber) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+		/* Serialize of data.The data's are written into the file. 
+		 * 
+		 * @return void.
+		 * 
+		 */
+
+		public void serialize() {
 		try {
 			FileOutputStream fos = new FileOutputStream("D:\\hclbank.txt");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(bank.bankList);
+			oos.writeObject(bankList);
 			oos.close();
 			fos.close();
 			System.out.println("Accounts details are successfully inserted in file.");
@@ -103,6 +142,27 @@ public class MiniBankMain {
 		}
 	}
 
+	
+	
+	/*
+	 *  Deserialize of data.The data's are read from the file.
+	 *  
+	 *  @return void.
+	 */
+	
+	@SuppressWarnings("unchecked")
+	public void deSerialize() {
+		try {
+			FileInputStream fos = new FileInputStream("D:\\hclbank.txt");
+			ObjectInputStream oos = new ObjectInputStream(fos);
+			bankList = (ArrayList<MiniBank>) oos.readObject();
+			oos.close();
+			fos.close();
+		} catch (Exception e) {
+			System.out.println("Error in reading the file." + e.getMessage());
+		}
+	}
+	
 	/**
 	 * This method is used for deposition of amount which is obtained from user
 	 * which is added into the account.
@@ -112,16 +172,14 @@ public class MiniBankMain {
 	 * @return void.
 	 * 
 	 */
-
 	public void deposit(Scanner sc) {
 		System.out.println("Account Number:");
 		int accountNumber = sc.nextInt();
-		for (MiniBank bank : bankList) {
-			if (bank.getAccountNumber() == accountNumber) {
+		if(checkAccount(accountNumber)) {
 				System.out.println("Deposit Amount:");
 				double depositAmt = sc.nextDouble();
 				Account obj = new Account();
-				DepositThread dThread = new DepositThread(obj, depositAmt, accountNumber, bankList);
+				DepositThread dThread = new DepositThread(obj,accountNumber, depositAmt, bankList);
 				Thread thread = new Thread(dThread, "Atm");
 				thread.start();
 				System.out.println("Your Deposit is Successfull");
@@ -135,7 +193,6 @@ public class MiniBankMain {
 			}
 		}
 
-	}
 
 	/**
 	 * This method is used for withdrawal of amount which is obtained from user
@@ -150,12 +207,11 @@ public class MiniBankMain {
 	public void withdraw(Scanner sc) {
 		System.out.println("Account Number:");
 		int accountNumber = sc.nextInt();
-		for (MiniBank bank : bankList) {
-			if (bank.getAccountNumber() == accountNumber) {
+					if (checkAccount(accountNumber)) {
 				System.out.println("Withdrawal Amount:");
 				double withdrawAmt = sc.nextDouble();
 				Account obj = new Account();
-				WithdrawThread wThread = new WithdrawThread(obj, withdrawAmt, accountNumber, bankList);
+				WithdrawThread wThread = new WithdrawThread(obj,accountNumber, withdrawAmt,bankList);
 				Thread thread = new Thread(wThread, "Atm");
 				thread.start();
 				System.out.println("Your Withdrawal is Successfull");
@@ -168,7 +224,6 @@ public class MiniBankMain {
 				System.out.println("Not Successfull");
 			}
 		}
-	}
 
 	/**
 	 * This method is used for collecting the bank details like account
@@ -181,9 +236,10 @@ public class MiniBankMain {
 	 * 
 	 */
 	public void add(Scanner sc) {
-
+   try {
 		System.out.println("Account Number : ");
 		int accountNumber = sc.nextInt();
+		if(!checkAccount(accountNumber)) {
 		System.out.println("Name : ");
 		String name = sc.next();
 		double balance = 0.0;
@@ -196,8 +252,13 @@ public class MiniBankMain {
 			System.out.println("Invalid Balance Amount");
 		}
 
-		bankList.add(new MiniBank(accountNumber, name, balance));
+		boolean inActive = false;
+		bankList.add(new MiniBank(accountNumber, name, balance, inActive));
 
+	}
+	}catch(InputMismatchException e) {
+		System.out.println("Enter a valid account number"+e.getMessage());
+	}
 	}
 
 	/**
@@ -212,16 +273,19 @@ public class MiniBankMain {
 
 	public double balance(Scanner sc) {
 		try {
-			DecimalFormat formatter = new DecimalFormat("#,###.00");
 			System.out.println("Account Number : ");
 			int accountNumber = sc.nextInt();
-			for (MiniBank bank : bankList) {
-				if (bank.getAccountNumber() == accountNumber) {
-					System.out.println("Account Number:" + bank.getAccountNumber() + "\nName:" + bank.getName()
-							+ "\nBalance Amount:" + formatter.format(bank.getBalance()));
+			short count = (short) bankList.stream().filter
+					(bankList -> bankList.getAccountNumber()==accountNumber).count();
+			if(count ==1) {
+				bankList.stream().filter((var)->var.getAccountNumber()==accountNumber)
+				.forEach((var) -> System.out.println(var.getAccountNumber() + "\t" +var.getName()
+				+ "\t" + NumberFormat.getInstance().format(var.getBalance())));
+			} else {
+				System.out.println("Account not available");
+					
 				}
 
-			}
 		} catch (Exception e) {
 			System.out.println("Please enter a valid account number" + e.getMessage());
 		}
@@ -241,24 +305,29 @@ public class MiniBankMain {
 	public void fundTransfer(Scanner sc) {
 		System.out.println("From Account:");
 		int fromAccount = sc.nextInt();
-		for (MiniBank bank : bankList) {
-			if (bank.getAccountNumber() == fromAccount && bank.getBalance() > 0) {
+		if(checkAccount(fromAccount)) {
+			System.out.println("Amount to be transferred:");
+			int amount = sc.nextInt();
 				System.out.println("To Account:");
 				int toAccount = sc.nextInt();
-				for (MiniBank mBank : bankList) {
-					if (mBank.getAccountNumber() == toAccount && mBank.getBalance() > 0) {
-						System.out.println("Amount to be transferred:");
-						int amount = sc.nextInt();
-						Account acc = new Account();
-						TransferThread tThread = new TransferThread(acc, fromAccount, amount, toAccount, bankList);
-						Thread thread1 = new Thread(tThread, "Atm");
-						thread1.start();
-						System.out.println("Your Fund Transaction is Successfull");
-					}
+				if(checkAccount(toAccount)) {
+				Account obj = new Account();
+				WithdrawThread wThread = new WithdrawThread(obj, fromAccount, amount,bankList);
+				Thread thread = new Thread(wThread, "Atm");
+				thread.start();
+				System.out.println("Sender's Withdrawal is Successfull");
+				DepositThread dThread = new DepositThread(obj,toAccount, amount,bankList);
+				Thread thread1 = new Thread(dThread, "Atm");
+				thread1.start();
+				System.out.println("Receiver's deposit is Successfull");
+					} else {
+						System.out.println("Sender's Account doesn't exists");
 				}
 
+			}else {
+				System.out.println("Receiver's Account doesn't exists");
 			}
-		}
 
 	}
 }
+	

@@ -1,4 +1,4 @@
-package com.hcl.day28.ex;
+package com.hcl.day28.bankportal;
 
 import java.io.Serializable;
 
@@ -13,10 +13,12 @@ import java.io.Serializable;
  *
  */
 
-public class MiniBank implements Serializable {
+public class MiniBank implements Serializable , Bank {
+	private static final long serialVersionUID = 1L;
 	private int accountNumber;
 	private String name;
 	private double balance;
+	private boolean inActive;
 
 	/**
 	 * This is a parameterized constructor which is used to assign the variables
@@ -28,11 +30,12 @@ public class MiniBank implements Serializable {
 	 * @param withdrawAmt
 	 * @param depositAmt
 	 */
-	public MiniBank(int accountNumber, String name, double balance) {
+	public MiniBank(int accountNumber, String name, double balance,boolean inActive) {
 		super();
 		this.name = name;
 		this.accountNumber = accountNumber;
 		this.balance = balance;
+		this.setInActive(inActive);
 
 	}
 
@@ -97,4 +100,24 @@ public class MiniBank implements Serializable {
 	 * 
 	 * @return the withdrawAmt
 	 */
+
+	/**
+	 * @return the inActive
+	 */
+	public boolean isInActive() {
+		return inActive;
+	}
+
+	/**
+	 * @param inActive the inActive to set
+	 */
+	public void setInActive(boolean inActive) {
+		this.inActive = inActive;
+	}
+
+	@Override
+	public void closeAccount() {
+		// TODO Auto-generated method stub
+		
+	}
 }

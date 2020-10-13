@@ -1,4 +1,4 @@
-package com.hcl.day28.ex;
+package com.hcl.day28.bankportal;
 
 import java.util.ArrayList;
 
@@ -22,11 +22,14 @@ public class DepositThread implements Runnable {
 	 * consists of fields like object which is created for the synchronized class
 	 * and the money to be give for deposition and arraylist.
 	 * 
-	 * @param amt,amount.
+	 * @param obj
+	 * @param depositAmt
+	 * @param accountNumber
+	 * @param bankList.
 	 */
 	ArrayList<MiniBank> bankLite;
 
-	public DepositThread(Account obj, double depositAmt, int accountNumber, ArrayList<MiniBank> bankList) {
+	public DepositThread(Account obj, int accountNumber,double depositAmt, ArrayList<MiniBank> bankList) {
 		super();
 		this.obj = obj;
 		this.depositAmt = depositAmt;

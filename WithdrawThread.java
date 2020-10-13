@@ -1,4 +1,4 @@
-package com.hcl.day28.ex;
+package com.hcl.day28.bankportal;
 
 import java.util.ArrayList;
 
@@ -22,10 +22,13 @@ public class WithdrawThread implements Runnable {
 	 * consists of fields like object which is created for the synchronized class
 	 * and the money to to given.
 	 * 
-	 * @param amt,amount.
+	 * @param obj
+	 * @param withdrawAmt
+	 * @param accountNumber
+	 * @param bankList.
 	 */
 	ArrayList<MiniBank> miniBank;
-	public WithdrawThread(Account obj, double withdrawAmt,int accountNumber,ArrayList<MiniBank> bankList) {
+	public WithdrawThread(Account obj, int accountNumber, double withdrawAmt, ArrayList<MiniBank> bankList) {
 		super();
 		this.obj = obj;
 		this.withdrawAmt= withdrawAmt;
