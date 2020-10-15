@@ -1,5 +1,7 @@
 package com.hcl.day31;
 
+import java.util.Date;
+
 /**
  * 
  * This class is used to store the datas and this consists of
@@ -11,11 +13,11 @@ package com.hcl.day31;
  */
 
 public class HotelReservation {
-	String fromDate;
-	String toDate;
-	String name;
-	String status;
-	double price;
+	private Date fromDate;
+	private Date toDate;
+	private String name;
+	private String status;
+	private double price;
 
 	/**
 	 * 
@@ -27,7 +29,7 @@ public class HotelReservation {
 	 * @param toDate
 	 * @param fromDate
 	 */
-	public HotelReservation(String fromDate, String toDate, String name, String status, double price) {
+	public HotelReservation(Date fromDate, Date toDate, String name, String status, double price) {
 		super();
 		this.fromDate = fromDate;
 		this.toDate = toDate;
@@ -39,28 +41,28 @@ public class HotelReservation {
 	/**
 	 * @return the fromDate
 	 */
-	public String getFromDate() {
+	public Date getFromDate() {
 		return fromDate;
 	}
 
 	/**
-	 * @param fromDate the fromDate to set
+	 * @param fromDate2 the fromDate to set
 	 */
-	public void setFromDate(String fromDate) {
+	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 
 	/**
 	 * @return the toDate
 	 */
-	public String getToDate() {
+	public Date getToDate() {
 		return toDate;
 	}
 
 	/**
-	 * @param toDate the toDate to set
+	 * @param toDate2 the toDate to set
 	 */
-	public void setToDate(String toDate) {
+	public void setToDate(Date toDate) {
 		this.toDate = toDate;
 	}
 

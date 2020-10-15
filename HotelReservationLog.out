@@ -1,0 +1,175 @@
+2020/10/289 06:55:02 2020-10-15 06:55:02,940 HotelReservationMain: Welcome to Hotel Reservation System
+2020/10/289 06:55:21 2020-10-15 06:55:21,969 HotelReservationMain: Welcome to Hotel Reservation System
+2020/10/289 06:56:13 2020-10-15 06:56:13,634 HotelReservationMain: Welcome to Hotel Reservation System
+2020/10/289 06:56:54 2020-10-15 06:56:54,934 HotelReservationMain: 
+The details are added successfully!
+
+2020/10/289 06:57:27 2020-10-15 06:57:27,602 HotelReservationMain: 
+The details are added successfully!
+
+2020/10/289 06:58:04 2020-10-15 06:58:04,038 HotelReservationMain: Updated Successfully
+2020/10/289 06:58:04 2020-10-15 06:58:04,038 HotelReservationMain: 
+The Details added to the list:
+2020/10/289 06:58:04 2020-10-15 06:58:04,045 HotelReservationMain: From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Thu Oct 29 00:00:00 IST 2020
+Name: Ganesh
+Status: unbooked
+Price(INR): 10,000
+2020/10/289 06:58:04 2020-10-15 06:58:04,045 HotelReservationMain: From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Thu Oct 29 00:00:00 IST 2020
+Name: Shiva
+Status: unbooked
+Price(INR): 20,000
+2020/10/289 06:58:08 2020-10-15 06:58:08,635 HotelReservationMain: 
+The Details added to the list:
+2020/10/289 06:58:08 2020-10-15 06:58:08,636 HotelReservationMain: From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Thu Oct 29 00:00:00 IST 2020
+Name: Ganesh
+Status: unbooked
+Price(INR): 10,000
+2020/10/289 06:58:08 2020-10-15 06:58:08,636 HotelReservationMain: From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Thu Oct 29 00:00:00 IST 2020
+Name: Shiva
+Status: unbooked
+Price(INR): 20,000
+2020/10/289 06:58:26 2020-10-15 06:58:26,029 HotelReservationMain: 
+The Details added to the list:
+2020/10/15 07:07:17 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Welcome to Hotel Reservation System
+  2020/10/15 07:08:04 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Welcome to Hotel Reservation System
+  2020/10/15 07:08:19 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Welcome to Hotel Reservation System
+  2020/10/15 07:09:21 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The details are added successfully!
+
+  2020/10/15 07:09:54 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details added to the list:
+  2020/10/15 07:09:54 com.hcl.day31.HotelReservationMain main DEBUG com.hcl.day31.HotelReservationMain  - From Date: Thu Aug 27 00:00:00 IST 2020
+To Date: Fri Aug 28 00:00:00 IST 2020
+Name: Dharini
+Status: Booked
+Price(INR): 20,000
+  2020/10/15 07:10:30 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Updated Successfully
+  2020/10/15 07:10:30 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details added to the list:
+  2020/10/15 07:10:30 com.hcl.day31.HotelReservationMain main DEBUG com.hcl.day31.HotelReservationMain  - From Date: Thu Aug 27 00:00:00 IST 2020
+To Date: Fri Aug 28 00:00:00 IST 2020
+Name: Dharini
+Status: unbooked
+Price(INR): 20,000
+  2020/10/15 07:10:48 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details added to the list:
+  2020/10/15 07:18:15 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Welcome to Hotel Reservation System
+  2020/10/15 07:22:39 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The details are added successfully!
+
+  2020/10/15 07:22:57 com.hcl.day31.HotelReservationMain main DEBUG com.hcl.day31.HotelReservationMain  - From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Wed Oct 14 00:00:00 IST 2020
+Name: Ganapathy
+Status: Booked
+Price(INR): 20,000
+  2020/10/15 07:22:57 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details are Displayed successfully!
+  2020/10/15 07:23:24 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Updated Successfully
+  2020/10/15 07:23:24 com.hcl.day31.HotelReservationMain main DEBUG com.hcl.day31.HotelReservationMain  - From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Wed Oct 14 00:00:00 IST 2020
+Name: Ganapathy
+Status: unbooked
+Price(INR): 20,000
+  2020/10/15 07:23:24 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details are Displayed successfully!
+  2020/10/15 07:23:32 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Details are deleted successfully!!
+  2020/10/15 07:23:36 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details are Displayed successfully!
+  2020/10/15 07:23:42 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Good Bye!
+  2020/10/15 07:26:56 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Welcome to Hotel Reservation System
+  2020/10/15 07:27:28 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The details are added successfully!
+
+  2020/10/15 07:27:35 com.hcl.day31.HotelReservationMain main DEBUG com.hcl.day31.HotelReservationMain  - From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Wed Oct 14 00:00:00 IST 2020
+Name: Dharini
+Status: booked
+Price(INR): 20,000
+  2020/10/15 07:27:35 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details are Displayed successfully!
+  2020/10/15 07:28:09 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Updated Successfully
+  2020/10/15 07:28:09 com.hcl.day31.HotelReservationMain main DEBUG com.hcl.day31.HotelReservationMain  - From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Wed Oct 14 00:00:00 IST 2020
+Name: Dharini
+Status: unbooked
+Price(INR): 20,000
+  2020/10/15 07:28:09 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - 
+The Details are Displayed successfully!
+  2020/10/15 07:28:15 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Details are deleted successfully!!
+  2020/10/15 07:28:22 com.hcl.day31.HotelReservationMain main INFO  com.hcl.day31.HotelReservationMain  - Good Bye!
+  2020/10/15 07:35:11 com.hcl.day31.HotelReservationMain main INFO  {1}:Welcome to Hotel Reservation System
+  2020/10/15 07:35:47 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The details are added successfully!
+
+  2020/10/15 07:35:53 com.hcl.day31.HotelReservationMain main DEBUG {1}:From Date: Sat Oct 24 00:00:00 IST 2020
+To Date: Sun Oct 25 00:00:00 IST 2020
+Name: Swathi
+Status: Booked
+Price(INR): 20,000
+  2020/10/15 07:35:53 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The Details are Displayed successfully!
+  2020/10/15 07:36:21 com.hcl.day31.HotelReservationMain main INFO  {1}:Updated Successfully
+  2020/10/15 07:36:21 com.hcl.day31.HotelReservationMain main DEBUG {1}:From Date: Sat Oct 24 00:00:00 IST 2020
+To Date: Sun Oct 25 00:00:00 IST 2020
+Name: Swathi
+Status: unbooked
+Price(INR): 20,000
+  2020/10/15 07:36:21 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The Details are Displayed successfully!
+  2020/10/15 07:36:28 com.hcl.day31.HotelReservationMain main INFO  {1}:Details are deleted successfully!!
+  2020/10/15 07:36:31 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The Details are Displayed successfully!
+  2020/10/15 07:36:35 com.hcl.day31.HotelReservationMain main INFO  {1}:Good Bye!
+  2020/10/15 07:37:54 com.hcl.day31.HotelReservationMain main INFO  {1}:Welcome to Hotel Reservation System
+  2020/10/15 07:38:02 com.hcl.day31.HotelReservationMain main WARN  {1}:Sorry,but "good" is not a valid command. Please try again.
+  2020/10/15 07:38:13 com.hcl.day31.HotelReservationMain main ERROR {1}:Please enter the valid Data's!Unparseable date: "45"
+  2020/10/15 07:39:06 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The details are added successfully!
+
+  2020/10/15 07:39:35 com.hcl.day31.HotelReservationMain main INFO  {1}:Updated Successfully
+  2020/10/15 07:39:35 com.hcl.day31.HotelReservationMain main DEBUG {1}:From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Fri Oct 23 00:00:00 IST 2020
+Name: Karthi
+Status: booked
+Price(INR): 20,000
+  2020/10/15 07:39:35 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The Details are Displayed successfully!
+  2020/10/15 07:39:45 com.hcl.day31.HotelReservationMain main INFO  {1}:Good Bye!
+  2020/10/15 07:40:00 com.hcl.day31.HotelReservationMain main INFO  {1}:Welcome to Hotel Reservation System
+  2020/10/15 07:41:10 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The details are added successfully!
+
+  2020/10/15 07:44:54 com.hcl.day31.HotelReservationMain main {1}:Welcome to Hotel Reservation System
+  2020/10/15 07:45:29 com.hcl.day31.HotelReservationMain main {1}:Please enter the valid Data's!null
+  2020/10/15 07:45:29 com.hcl.day31.HotelReservationMain main {1}:Sorry,but "bnm" is not a valid command. Please try again.
+  2020/10/15 07:46:02 com.hcl.day31.HotelReservationMain main {1}:Good Bye!
+  2020/10/15 07:56:36 com.hcl.day31.HotelReservationMain main INFO  {1}:Welcome to Hotel Reservation System
+  2020/10/15 07:57:03 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The details are added successfully!
+
+  2020/10/15 07:57:34 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The details are added successfully!
+
+  2020/10/15 07:57:40 com.hcl.day31.HotelReservationMain main INFO  {1}:Details are deleted successfully!!
+  2020/10/15 07:57:40 com.hcl.day31.HotelReservationMain main INFO  {1}:Details are deleted successfully!!
+  2020/10/15 07:57:47 com.hcl.day31.HotelReservationMain main DEBUG {1}:From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Wed Oct 14 00:00:00 IST 2020
+Name: Ganesh
+Status: booked
+Price(INR): 20,000
+  2020/10/15 07:57:47 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The Details are Displayed successfully!
+  2020/10/15 07:58:21 com.hcl.day31.HotelReservationMain main INFO  {1}:Updated Successfully
+  2020/10/15 07:58:21 com.hcl.day31.HotelReservationMain main DEBUG {1}:From Date: Tue Oct 13 00:00:00 IST 2020
+To Date: Wed Oct 14 00:00:00 IST 2020
+Name: Ganesh
+Status: unbooked
+Price(INR): 20,000
+  2020/10/15 07:58:21 com.hcl.day31.HotelReservationMain main INFO  {1}:
+The Details are Displayed successfully!
+  2020/10/15 07:58:29 com.hcl.day31.HotelReservationMain main INFO  {1}:Good Bye!
+  
