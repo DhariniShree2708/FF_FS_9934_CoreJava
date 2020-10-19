@@ -1,111 +1,48 @@
-package com.hcl.day31;
+package com.hcl.day35;
 
-import java.util.Date;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
- * 
- * This class is used to store the datas and this consists of
- * constructors,getters and setters.
- * 
- * 
- * @author Dharini
- *
+ * Servlet implementation class HotelReservation
  */
-
-public class HotelReservation {
-	private Date fromDate;
-	private Date toDate;
-	private String name;
-	private String status;
-	private double price;
+@WebServlet("/HotelReservation")
+public class HotelReservation extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 
-	 * This is a parameterized constructor.
-	 * 
-	 * @param price
-	 * @param status
-	 * @param name
-	 * @param toDate
-	 * @param fromDate
+	 * Default constructor.
 	 */
-	public HotelReservation(Date fromDate, Date toDate, String name, String status, double price) {
-		super();
-		this.fromDate = fromDate;
-		this.toDate = toDate;
-		this.name = name;
-		this.status = status;
-		this.price = price;
+	public HotelReservation() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @return the fromDate
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	public Date getFromDate() {
-		return fromDate;
-	}
-
-	/**
-	 * @param fromDate2 the fromDate to set
-	 */
-	public void setFromDate(Date fromDate) {
-		this.fromDate = fromDate;
-	}
-
-	/**
-	 * @return the toDate
-	 */
-	public Date getToDate() {
-		return toDate;
-	}
-
-	/**
-	 * @param toDate2 the toDate to set
-	 */
-	public void setToDate(Date toDate) {
-		this.toDate = toDate;
-	}
-
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @return the status
-	 */
-	public String getStatus() {
-		return status;
-	}
-
-	/**
-	 * @param status the status to set
-	 */
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	/**
-	 * @return the price
-	 */
-	public double getPrice() {
-		return price;
-	}
-
-	/**
-	 * @param price the price to set
-	 */
-	public void setPrice(double price) {
-		this.price = price;
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setContentType("text/html");// setting the content type
+		PrintWriter pw = response.getWriter(); // get the stream to write the data
+		// writing html in the stream
+		pw.println("<html>" + "<body>" + "<form>" + "<h1>" + "Reservation:" + "<table>" + "<tr><td>"
+				+ "Date of Accomodation of Rooms:" + "</td>" + "<td>" + "<input type=\"date\">" + "</td></tr>" + "\n"
+				+ "<tr><td>" + "Date of Vacating Rooms:" + "</td>" + "<td>" + "<input type=\"date\">" + "</td></tr>"
+				+ "\n" + "<tr><td>" + "Name:" + "</td>" + "<td>" + "<input type=\"text\">" + "</td></tr>" + "\n"
+				+ "<tr><td>" + "Status:" + "</td>" + "<td>" + "<input type=\"text\">" + "</td></tr>" + "\n" + "<tr><td>"
+				+ "Price(INR):" + "</td>" + "<td>" + "<input type=\"text\">" + "</td></tr>" + "\n" + "<tr><td>"
+				+ "<input type=\"submit\">" + "</td>" + "<td>" + "<input type=\"button\" value=\"reset\">"
+				+ "</td></tr>" + "</table></form>" + "<h1>" + "Thanks for Reserving!" + "</h1>" + "</body>"
+				+ "</html>");
+		pw.close();
 	}
 
 }
