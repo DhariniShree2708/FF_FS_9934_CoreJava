@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Remove Element</title>
+</head>
+<body>
+	<h2>Enter Name</h2>
+	<form action="RemoveServlet">
+		<table>
+			<tr>
+				<td>name:<input type="text" name="Name">
+				</td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="delete" onclick="RemoveServlet"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

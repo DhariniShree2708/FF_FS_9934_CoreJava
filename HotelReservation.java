@@ -1,48 +1,102 @@
 package com.hcl.day35;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 
 /**
- * Servlet implementation class HotelReservation
+ * 
  */
-@WebServlet("/HotelReservation")
-public class HotelReservation extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+
+public class HotelReservation {
+	private String fromDate;
+	private String toDate;
+	private String name;
+	private String status;
+	private String price;
 
 	/**
-	 * Default constructor.
+	 * @param fromDate
+	 * @param toDate
+	 * @param name
+	 * @param status
+	 * @param price
 	 */
-	public HotelReservation() {
-		// TODO Auto-generated constructor stub
+	public HotelReservation(String fromDate, String toDate, String name, String status, String price) {
+		super();
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+		this.name = name;
+		this.status = status;
+		this.price = price;
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @return the fromDate
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.setContentType("text/html");// setting the content type
-		PrintWriter pw = response.getWriter(); // get the stream to write the data
-		// writing html in the stream
-		pw.println("<html>" + "<body>" + "<form>" + "<h1>" + "Reservation:" + "<table>" + "<tr><td>"
-				+ "Date of Accomodation of Rooms:" + "</td>" + "<td>" + "<input type=\"date\">" + "</td></tr>" + "\n"
-				+ "<tr><td>" + "Date of Vacating Rooms:" + "</td>" + "<td>" + "<input type=\"date\">" + "</td></tr>"
-				+ "\n" + "<tr><td>" + "Name:" + "</td>" + "<td>" + "<input type=\"text\">" + "</td></tr>" + "\n"
-				+ "<tr><td>" + "Status:" + "</td>" + "<td>" + "<input type=\"text\">" + "</td></tr>" + "\n" + "<tr><td>"
-				+ "Price(INR):" + "</td>" + "<td>" + "<input type=\"text\">" + "</td></tr>" + "\n" + "<tr><td>"
-				+ "<input type=\"submit\">" + "</td>" + "<td>" + "<input type=\"button\" value=\"reset\">"
-				+ "</td></tr>" + "</table></form>" + "<h1>" + "Thanks for Reserving!" + "</h1>" + "</body>"
-				+ "</html>");
-		pw.close();
+	public String getFromDate() {
+		return fromDate;
+	}
+
+	/**
+	 * @param string the fromDate to set
+	 */
+	public void setFromDate(String string) {
+		this.fromDate = string;
+	}
+
+	/**
+	 * @return the toDate
+	 */
+	public String getToDate() {
+		return toDate;
+	}
+
+	/**
+	 * @param string the toDate to set
+	 */
+	public void setToDate(String string) {
+		this.toDate = string;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the price
+	 */
+	public String getPrice() {
+		return price;
+	}
+
+	/**
+	 * @param string the price to set
+	 */
+	public void setPrice(String string) {
+		this.price = string;
 	}
 
 }

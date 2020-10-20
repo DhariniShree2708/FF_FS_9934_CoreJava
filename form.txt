@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Reservation Details</title>
+</head>
+<body>
+	<form action="AddReservation">
+		<table>
+			<tr>
+				<td>Date of Accomodating Rooms:</td>
+				<td><input type="date" name="Date of Accomodating Rooms:"></td>
+			</tr>
+			<tr>
+				<td>Date of Vacating Rooms :</td>
+				<td><input type="date" name="Date of Vacating Rooms:"></td>
+			</tr>
+			<tr>
+				<td>Name :</td>
+				<td><input type="text" name="Name: "></td>
+			</tr>
+			<tr>
+				<td>Status :</td>
+				<td><input type="text" name="Status: "></td>
+			</tr>
+			<tr>
+				<td>Price (INR):</td>
+				<td><input type="number" name="Price (INR):"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Add" onclick="/AddReservation">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
